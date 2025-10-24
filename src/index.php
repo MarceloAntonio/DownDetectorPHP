@@ -46,8 +46,8 @@ $Sites = [
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="Assets/style.css">
-  <link rel='icon' type='image' href='/Assets/favicon.ico' />
-  <title>[nome da empresa] - DownDetector</title>
+  <link rel='icon' type='image' href='Assets/favicon.ico' />
+  <title>[Instituição] - DownDetector</title>
 </head>
 <body>
 
@@ -76,7 +76,7 @@ $Sites = [
 <footer>
     
     <img src="Assets/Logo.png">
-  <p> Copyright © 2025 - [Nome da empresa] | All Rights Reserved </p>
+  <p> Copyright © 2025 - [Instituição] | All Rights Reserved </p>
    <div id="Legenda">
     <br>
         <p>

@@ -1,0 +1,9 @@
+services:
+  php-apache:
+    build: .
+    container_name: php_curl_app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    restart: unless-stopped
