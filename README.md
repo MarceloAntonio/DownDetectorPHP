@@ -1,6 +1,6 @@
 # Painel Down Detector 🚦
 
-Um painel de monitoramento simples, para ser usado de modelo para implementação de um downdetctor em sites da intituição, desenvolvido em PHP e containerizado com Docker, que verifica o status (HTTP 200) de uma lista pré-definida de sites. Ele fornece uma visão rápida do que está "No Ar" (🟩) ou "Fora do Ar" (🟥).
+Um painel de monitoramento simples, que serve como modelo para a implementação de um "downdetector" em sites da instituição. Desenvolvido em PHP e containerizado com Docker, ele verifica o status (HTTP 200) de uma lista pré-definida de sites e fornece uma visão rápida do que está "No Ar" (🟩) ou "Fora do Ar" (🟥).
 
 O projeto é totalmente empacotado com Docker e Docker Compose, garantindo um setup de ambiente com zero atrito.
 
@@ -26,55 +26,46 @@ O ambiente interno do container (definido no `Dockerfile`) gerencia:
 
 ## 🛠️ Configuração do Ambiente (Setup)
 
-1.  **Clone o repositório:**
+1.  **Clone o repositório e entre na pasta:**
     ```bash
     git clone https://github.com/MarceloAntonio/DownDetectorPHP
+    cd DownDetectorPHP
     ```
 
-2.  **Estrutura de Arquivos (Crítico):**
-    O `docker-compose.yml` espera que seu código-fonte esteja em um diretório `./src`. Crie a seguinte estrutura:
-
-    ```
-    .
-    ├── docker-compose.yml
-    ├── Dockerfile
-    └── src/
-        ├── index.php         <-- (Seu arquivo PHP principal)
-        └── Assets/
-            ├── style.css
-            ├── favicon.ico
-            └── Logo.png
-    ```
-
-3.  **Personalize o `<title>` e o `<footer>`:**
-    ```html
-      <title>Sua Instituição aqui - DownDetector</title>
-    ```
-    ```html
-    <p> Copyright © 2025 - Sua instituição aqui | All Rights Reserved </p>
-    ```
-
-4.  **Configure os Sites (src/index.php):**
-    Abra o arquivo `src/index.php` e edite o array `$Sites` para incluir as URLs que você deseja monitorar:
+3.  **Configure os Sites (src/index.php):**
+    Abra o arquivo `src/index.php` e edite o array `$Sites` para incluir as URLs que você deseja monitorar.
 
     ```php
     // Em src/index.php
     $Sites = [
-        "[https://github.com]",
-        "[https://www.google.com/]",
-        "[https://seu-outro-site.com]"
+        "https://github.com",
+	    "https://google.com/",
+        "https://SeuSite.com"
     ];
     ```
 
-## 📦 Instalação, Build e ativação da aplicação
+4.  **Personalização (Opcional):**
+    Você pode customizar a aparência do painel:
 
-O Docker Compose cuida do build da imagem automaticamente. Para Criar e rodar o serviço basta rodas o seguinte comando 
+    * **Ícone e Logo:** A pasta `src/Assets` contém `favicon.ico` e `Logo.png`. **Substitua** esses arquivos pelos da sua instituição.
+    * **Título e Rodapé:** Abra o `src/index.php` e edite as seguintes linhas no HTML:
+
+    ```html
+    <title>Sua Instituição Aqui - DownDetector</title>
+    ```
+    ```html
+    <p> Copyright © 2025 - Sua Instituição Aqui | All Rights Reserved </p>
+    ```
+
+## 📦 Build e Execução
+
+O Docker Compose cuida do build da imagem e da execução do container. Para construir e iniciar o serviço, rode o seguinte comando:
 
 ```bash
 docker-compose up -d --build
 ````
 
-O container `php_curl_app` será construído (se ainda não foi) e iniciado em background. A porta `8080` do seu host será mapeada para a porta `80` do container.
+O container `php_curl_app` será construído e iniciado em background. A porta `8080` do seu computador será mapeada para a porta `80` do container.
 
 Para parar a aplicação:
 
