@@ -1,23 +1,8 @@
 # Painel Down Detector 🚦
 
-[![Status da Build](https://img.shields.io/docker/build/seu-usuario/seu-repo?style=for-the-badge&label=Build%20Docker)](https://hub.docker.com/r/seu-usuario/seu-repo)
-[![PHP Version](https://img.shields.io/badge/PHP-8.2%20(Docker)-blueviolet?style=for-the-badge)](./Dockerfile)
-[![Licença](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](./LICENSE)
-
 Um painel de monitoramento simples, para ser usado de modelo para implementação de um downdetctor em sites da intituição, desenvolvido em PHP e containerizado com Docker, que verifica o status (HTTP 200) de uma lista pré-definida de sites. Ele fornece uma visão rápida do que está "No Ar" (🟩) ou "Fora do Ar" (🟥).
 
 O projeto é totalmente empacotado com Docker e Docker Compose, garantindo um setup de ambiente com zero atrito.
-
-## 📋 Índice
-
-- [Features Principais](#-features-principais)
-- [Stack Tecnológica (Pré-requisitos)](#-stack-tecnológica-pré-requisitos)
-- [Configuração do Ambiente (Setup)](#-configuração-do-ambiente-setup)
-- [Instalação e Build](#-instalação-e-build)
-- [Como Executar a Aplicação](#-como-executar-a-aplicação)
-- [Acessando o Painel](#-acessando-o-painel)
-- [Estrutura do Projeto](#-estrutura-do-projeto)
-- [Licença](#-licença)
 
 ## ✨ Features Principais
 
